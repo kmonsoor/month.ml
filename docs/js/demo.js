@@ -13,7 +13,7 @@ $(document).ready( function() {
     // Here's some magic to make sure the dates are happening this month.
     var thisMonth = moment().format('YYYY-MM');
     // Events to load into calendar
-    var eventArray = [
+/*     var eventArray = [
         {
             title: 'Multi-Day Event',
             endDate: thisMonth + '-14',
@@ -26,7 +26,9 @@ $(document).ready( function() {
             date: thisMonth + '-27',
             title: 'Single Day Event'
         }
-    ];
+    ]; */
+	
+	var eventArray = [];
 
     // The order of the click handlers is predictable. Direct click action
     // callbacks come first: click, nextMonth, previousMonth, nextYear,
@@ -75,7 +77,7 @@ $(document).ready( function() {
             endDate: 'endDate',
             startDate: 'startDate'
         },
-        showAdjacentMonths: true,
+        showAdjacentMonths: false,
         adjacentDaysChangeMonth: false
     });
 
@@ -111,8 +113,8 @@ $(document).ready( function() {
     // Calendar 3 renders two months at a time, paging 1 month
     calendars.clndr3 = $('.cal3').clndr({
         lengthOfTime: {
-            months: 2,
-            interval: 1
+            months: 3,
+            interval: 0
         },
         events: eventArray,
         multiDayEvents: {

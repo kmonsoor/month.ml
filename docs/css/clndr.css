@@ -1,4 +1,4 @@
-@import url(//fonts.googleapis.com/css?family=Droid+Sans+Mono);
+@import url(//fonts.googleapis.com/css?family=Droid+Sans);
 .clearfix:after {
   content: ".";
   display: block;
@@ -58,18 +58,22 @@ p {
   margin: 30px auto;
   max-width: 600px;
   font-family: 'Droid Sans Mono';
-  font-size: 14px;
+  font-size: 16px;
 }
 .cal1 .clndr .clndr-controls {
   display: inline-block;
   width: 100%;
   position: relative;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 .cal1 .clndr .clndr-controls .month {
   float: left;
   width: 33%;
   text-align: center;
+  font-family: 'Droid Sans';
+  font-weight: bolder;
+  
+  
 }
 .cal1 .clndr .clndr-controls .clndr-control-button {
   float: left;
@@ -123,7 +127,8 @@ p {
 }
 .cal1 .clndr .clndr-table .header-days {
   height: 30px;
-  font-size: 10px;
+  font-size: 12px;
+  font-style: bold;
   background: #0D70A6;
 }
 .cal1 .clndr .clndr-table .header-days .header-day {
@@ -137,7 +142,7 @@ p {
   border-right: 1px solid #000000;
 }
 .cal1 .clndr .clndr-table tr {
-  height: 85px;
+  height: 50px;
 }
 .cal1 .clndr .clndr-table tr td {
   vertical-align: top;
@@ -145,8 +150,9 @@ p {
 .cal1 .clndr .clndr-table tr .day {
   border-left: 1px solid #000000;
   border-top: 1px solid #000000;
-  width: 100%;
-  height: inherit;
+  width: auto;
+  height: 50px;
+  font-weight: bolder;
 }
 .cal1 .clndr .clndr-table tr .day:hover {
   background: #eee;
@@ -180,8 +186,8 @@ p {
 }
 .cal1 .clndr .clndr-table tr .day .day-contents {
   box-sizing: border-box;
-  padding: 8px;
-  font-size: 12px;
+  padding: 5px;
+  font-size: 14px;
   text-align: right;
 }
 .cal1 .clndr .clndr-table tr .empty,
@@ -191,7 +197,7 @@ p {
   border-left: 1px solid #000000;
   border-top: 1px solid #000000;
   width: 100%;
-  height: inherit;
+  height: auto;
   background: #eee;
 }
 .cal1 .clndr .clndr-table tr .empty:hover,
