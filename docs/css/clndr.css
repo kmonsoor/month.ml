@@ -1,4 +1,4 @@
-@import url(//fonts.googleapis.com/css?family=Droid+Sans);
+/* @import url(//fonts.googleapis.com/css?family=Droid+Sans);  */
 .clearfix:after {
   content: ".";
   display: block;
@@ -27,7 +27,7 @@ html[xmlns] .clearfix {
 h4 {
   width: 75%;
   text-align: center;
-  font-family: 'Droid Sans Mono';
+  font-family: 'Droid Sans';
   font-weight: normal;
   color: white;
   font-size: 14px;
@@ -41,7 +41,7 @@ h5 {
 }
 p {
   text-align: center;
-  font-family: 'Droid Sans Mono';
+  font-family: 'Droid Sans';
   margin: 3em auto 1em auto;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
@@ -57,7 +57,7 @@ p {
 .cal1 {
   margin: 30px auto;
   max-width: 600px;
-  font-family: 'Droid Sans Mono';
+  font-family: 'Droid Sans';
   font-size: 16px;
 }
 .cal1 .clndr .clndr-controls {
@@ -220,10 +220,21 @@ p {
 .cal1 .clndr .clndr-table tr:last-child .my-empty {
   border-bottom: 1px solid #000000;
 }
+
+.cal1 .clndr .main-today-button {
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  background-color: #ddd;
+}
+.cal1 .clndr .main-today-button:hover {
+  background-color: #0d70a6;
+}
+
 .cal2 {
   max-width: 177px;
   margin: 30px auto;
-  font-family: 'Droid Sans Mono';
+  font-family: 'Droid Sans';
 }
 .cal2 .clndr .clndr-controls {
   display: block;

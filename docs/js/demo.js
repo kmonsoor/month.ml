@@ -78,7 +78,11 @@ $(document).ready( function() {
             startDate: 'startDate'
         },
         showAdjacentMonths: false,
-        adjacentDaysChangeMonth: false
+        adjacentDaysChangeMonth: true,
+        daysOfTheWeek: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+        targets: {
+            todayButton: 'clndr-today-button'
+        }
     });
 
 //     // Calendar 2 uses a custom length of time: 2 weeks paging 7 days
@@ -113,8 +117,8 @@ $(document).ready( function() {
     // Calendar 3 renders two months at a time, paging 1 month
     calendars.clndr3 = $('.cal3').clndr({
         lengthOfTime: {
-            months: 3,
-            interval: 0
+            months: 2,
+            interval: 1
         },
         events: eventArray,
         multiDayEvents: {
@@ -152,6 +156,12 @@ $(document).ready( function() {
             calendars.clndr1.forward();
 //             calendars.clndr2.forward();
             calendars.clndr3.forward();
+        }
+        
+        // Home key
+        if (e.keyCode == 36){
+            calendars.clndr1.today();
+            calendars.clndr3.today();
         }
     });
 });
