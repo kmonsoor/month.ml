@@ -2,9 +2,9 @@
 var calendars = {};
 
 $(document).ready( function() {
-    console.info(
+/*    console.info(
         'Welcome to the CLNDR demo. Click around on the calendars and' +
-        'the console will log different events that fire.');
+        'the console will log different events that fire.');*/
 
     // Assuming you've got the appropriate language files,
     // clndr will respect whatever moment's language is set to.
@@ -28,14 +28,43 @@ $(document).ready( function() {
         }
     ]; */
 	
-	var eventArray = [];
+    var eventArray = [];
+    
+    $('#full-clndr').clndr({
+        template: $('#full-clndr-template').html(),
+        events: eventArray,
+        clickEvents: {
+          click: function(target) {
+            if(target.events.length) {
+              var daysContainer = $('#full-clndr').find('.days-container');
+              daysContainer.toggleClass('show-events', true);
+              $('#full-clndr').find('.x-button').click( function() {
+                daysContainer.toggleClass('show-events', false);
+              });
+            }
+          }
+        },
+        adjacentDaysChangeMonth: true,
+        forceSixRows: false
+      });
+
+          // Calendar 3 renders two months at a time, paging 1 month
+/*    $('#clndr-4').clndr({
+        lengthOfTime: {
+            months: 2,
+            interval: 1
+        },
+        events: eventArray
+        
+        // template: $('#template-calendar-months').html()
+    });*/
 
     // The order of the click handlers is predictable. Direct click action
     // callbacks come first: click, nextMonth, previousMonth, nextYear,
     // previousYear, nextInterval, previousInterval, or today. Then
     // onMonthChange (if the month changed), inIntervalChange if the interval
     // has changed, and finally onYearChange (if the year changed).
-    calendars.clndr1 = $('.cal1').clndr({
+/*     calendars.clndr1 = $('.cal1').clndr({
         events: eventArray,
         clickEvents: {
             click: function (target) {
@@ -84,7 +113,7 @@ $(document).ready( function() {
             todayButton: 'clndr-today-button'
         }
     });
-
+ */
 //     // Calendar 2 uses a custom length of time: 2 weeks paging 7 days
 //     calendars.clndr2 = $('.cal2').clndr({
 //         lengthOfTime: {
@@ -114,33 +143,7 @@ $(document).ready( function() {
 //         }
 //     });
 
-    // Calendar 3 renders two months at a time, paging 1 month
-    calendars.clndr3 = $('.cal3').clndr({
-        lengthOfTime: {
-            months: 2,
-            interval: 1
-        },
-        events: eventArray,
-        multiDayEvents: {
-            endDate: 'endDate',
-            startDate: 'startDate'
-        },
-        clickEvents: {
-            click: function (target) {
-                console.log('Cal-3 clicked: ', target);
-            },
-            nextInterval: function () {
-                console.log('Cal-3 next interval');
-            },
-            previousInterval: function () {
-                console.log('Cal-3 previous interval');
-            },
-            onIntervalChange: function () {
-                console.log('Cal-3 interval changed');
-            }
-        },
-        template: $('#template-calendar-months').html()
-    });
+
 
     // Bind all clndrs to the left and right arrow keys
     $(document).keydown( function(e) {
