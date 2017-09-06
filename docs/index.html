@@ -90,12 +90,9 @@
 
 
     <div class="block bg-gray">
-        <div class="inner">
-
-    <div style="display: block; margin: 0 auto;" class="today-button" id="today-button">Today</div>
-
-        </div>
+        <div style="display: block; margin: 0 auto;" class="today-button" id="today-button">Today</div>
     </div>
+
     <div class="block bg-gray">
         <div class="inner">
 
@@ -116,7 +113,8 @@
                                 <% }); %>
                             </div>
                             <% _.each(days, function(day) { %>
-                            <div class="<%= day.classes %>" id="<%= day.id %>"><%= day.day %></div>
+                            <div class="<%= day.classes %>" id="<%= day.id %>"><span
+                                    class="day-number"><%= day.day %></span></div>
                             <% }); %>
                         </div>
                     </div>

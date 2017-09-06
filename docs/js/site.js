@@ -14,17 +14,16 @@ $(function () {
     window.full_clndr = $('#full-clndr').clndr({
         template: $('#full-clndr-template').html(),
         daysOfTheWeek: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-        numberOfRows: 5,
-        targets: {
-            today: 'today-button'
-        }
+        numberOfRows: 5
         // events: events,
     });
 
     window.mini_clndr = $('#mini-clndr').clndr({
         template: $('#mini-clndr-template').html(),
-        adjacentDaysChangeMonth: true,
-        numberOfRows: 5
+        daysOfTheWeek: ['Su', 'M', 'Tu', 'W', 'Th', 'F', 'Sa'],
+        adjacentDaysChangeMonth: false,
+        numberOfRows: 5,
+        startWithMonth: nextMonth
         // lengthOfTime: {months: 2, interval:1}
         // events: events,
         /*    clickEvents: {
