@@ -22,7 +22,7 @@ $(function () {
         template: $('#mini-clndr-template').html(),
         daysOfTheWeek: ['Su', 'M', 'Tu', 'W', 'Th', 'F', 'Sa'],
         adjacentDaysChangeMonth: false,
-        numberOfRows: 5,
+        // numberOfRows: 5,
         startWithMonth: nextMonth
         // lengthOfTime: {months: 2, interval:1}
         // events: events,

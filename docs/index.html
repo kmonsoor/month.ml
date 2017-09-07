@@ -106,12 +106,12 @@
                     </div>
 
                     <div class="days-container">
+                        <div class="headers">
+                            <% _.each(daysOfTheWeek, function(day) { %>
+                            <div class="day-header"><%= day %></div>
+                            <% }); %>
+                        </div>
                         <div class="days">
-                            <div class="headers">
-                                <% _.each(daysOfTheWeek, function(day) { %>
-                                <div class="day-header"><%= day %></div>
-                                <% }); %>
-                            </div>
                             <% _.each(days, function(day) { %>
                             <div class="<%= day.classes %>" id="<%= day.id %>"><span
                                     class="day-number"><%= day.day %></span></div>
